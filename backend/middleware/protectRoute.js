@@ -5,7 +5,7 @@ dotenv.config();
 const protectRoute = async (req, res, next) => {
     try {
         const token = req.cookies.jwt
-        console.log('token: ', token)
+        // console.log('token: ', token)
         if (!token) {
             res.status(400).json({
                 error: "Unauthorized - No Token Provided"
@@ -19,7 +19,7 @@ const protectRoute = async (req, res, next) => {
             })
         }
         const user = await User.findById(decoded.userId).select("password")
-        console.log('user: ', user)
+        // console.log('user: ', user)
 
         req.User = user
         next();

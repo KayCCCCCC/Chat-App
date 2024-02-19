@@ -43,6 +43,8 @@ export const logout = (req, res) => {
 export const signup = async (req, res) => {
     try {
         const { fullName, userName, password, confirmPassword, gender } = req.body;
+        // console.log(userName)
+        // console.log(req.body)
         if (password != confirmPassword) {
             return res.status(400).json({
                 error: "Password don't match"
@@ -65,10 +67,10 @@ export const signup = async (req, res) => {
         const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${userName}`
 
         const newUser = new User({
-            fullName: fullName,
-            userName: userName,
+            fullName,
+            userName,
             password: hashPassWord,
-            gender: gender,
+            gender,
             profilePic: gender === "male" ? boyProfilePic : girlProfilePic
         })
         if (newUser) {
