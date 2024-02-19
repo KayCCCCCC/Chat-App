@@ -19,7 +19,7 @@ export const login = async (req, res) => {
             profilePic: user.profilePic
         })
     } catch (err) {
-        console.log('Error in signup: ', err.message)
+        console.log('Error in login: ', err.message)
         res.status(500).json({
             error: "Internal Server Error"
         })
@@ -33,7 +33,7 @@ export const logout = (req, res) => {
             message: "Logout successfull"
         })
     } catch (err) {
-        console.log('Error in signup: ', err.message)
+        console.log('Error in logout: ', err.message)
         res.status(500).json({
             error: "Internal Server Error"
         })

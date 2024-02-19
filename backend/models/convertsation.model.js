@@ -7,7 +7,7 @@ const convertsationSchema = new mongoose.Schema({
             ref: 'User',
         }
     ],
-    message: [
+    messages: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Message",
