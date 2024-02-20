@@ -21,7 +21,7 @@ app.use(
     cors({
         credentials: true,
         allowedHeaders: "Content-Type,Authorization",
-        origin: process.env.CLIENT_URL ?? "http://localhost:5173",
+        origin: [process.env.CLIENT_URL ?? "http://localhost:5173", "https://nha-chatapp.vercel.app"],
     })
 );
 app.use(cookies());
