@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import cors from 'cors'
 import cookies from 'cookie-parser';
+import './passport/passport.js'
+import passport from 'passport';
 dotenv.config();
 
 import authRoutes from './routes/auth.routes.js'
@@ -33,6 +35,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
     res.send('Hello World')
 })
+
+// config passport
+// app.use(passport.initialize());
 
 app.use("/api/auth", authRoutes)
 app.use("/api/message", messageRoutes)

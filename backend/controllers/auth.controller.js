@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import bcrypt from 'bcryptjs';
 import generateTokenAndSetCookies from "../utils/generateToken.js";
+
 export const login = async (req, res) => {
     try {
         const { userName, password } = req.body
@@ -96,4 +97,9 @@ export const signup = async (req, res) => {
             error: "Internal Server Error"
         })
     }
+}
+
+
+export const loginWithGoogleSuccess = async (req, res) => {
+
 }
